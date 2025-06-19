@@ -4,11 +4,13 @@ import psycopg
 import numpy as np
 
 DB_CONFIG = {
-    "host": "postgres",
-    "dbname": "ragdb",
-    "user": "rag",
-    "password": "ragpassword"
+    "host": "127.0.0.1",
+    "dbname": "postgres",
+    "user": "postgres",
+    "password": "pass"  # ← c’est celui que tu avais mis dans `docker run`
 }
+
+
 
 VECTOR_DIM = 384  # à ajuster selon le modèle d'embedding utilisé
 

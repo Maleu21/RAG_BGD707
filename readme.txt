@@ -2,6 +2,15 @@
 
 Projet RAG :
 
+Démarrage : 
+
+Lancer l'image PostgreSQL : 
+docker run --name my-postgres \
+  -e POSTGRES_PASSWORD=pass \
+  -p 5432:5432 \
+  -d pgvector/pgvector:pg16
+
+
 Structure du projet :
 Securité/
 ├── docker-compose.yml

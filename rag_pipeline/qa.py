@@ -1,6 +1,6 @@
 # rag_pipeline/qa.py
 
-from langchain.llms import Ollama
+from langchain_community.llms import Ollama  # ✅ nouveau chemin
 from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from langchain.docstore.document import Document
@@ -22,11 +22,11 @@ def ask_llm(question, contexts):
     prompt = format_prompt(contexts, question)
 
     try:
-        # Initialisation du modèle local via Ollama
-        llm = Ollama(model="llama2")  # Assure-toi d’avoir téléchargé ce modèle
-        print("🤖 Modèle LLM prêt (Ollama + LLaMA2)")
+        # Initialisation d’Ollama avec le modèle local phi3:mini
+        llm = Ollama(model="phi3:mini", base_url="http://localhost:11434")  # ✅ clair et compatible
+        print("🤖 Modèle LLM prêt (Ollama + phi3:mini)")
 
-        # Enrobage LangChain (version simple)
+        # Enrobage LangChain (chaîne simple)
         docs = [Document(page_content=prompt)]
         chain = load_qa_chain(llm, chain_type="stuff")
 
