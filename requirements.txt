@@ -1,0 +1,8 @@
+langchain>=0.2
+langchain-community>=0.2
+datasets>=2.18.0
+psycopg[binary]
+sqlalchemy
+pgvector
+ollama
+sentence-transformers
