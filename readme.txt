@@ -8,8 +8,8 @@ Lancer un environnement virtuel :
 source path/to/rag-env/bin/activate
  
 Lancer le script bash d’installation LLM :
-./dowload_LLM.sh
-(au besoin faire : dos2unix dowload_LLM.sh puis chmod +x dowload_LLM.sh)
+./download.sh
+(au besoin faire : dos2unix download_LLM.sh puis chmod +x download.sh)
 
 Lancer l'image PostgreSQL : 
 docker run --name my-postgres \
@@ -27,10 +27,10 @@ Securité/
 ├── main.py
 ├── rag_pipeline/
 │   ├── __init__.py
-│   ├── data_loader.py
-│   ├── embedder.py
-│   ├── db.py
+│   ├── loader.py
+│   ├── embeddings.py
+│   ├── database.py
 │   ├── retriever.py
-│   ├── llm.py
+│   ├── LLM.py
 │   └── qa.py
-└── readme.txt
+└── README.txt
