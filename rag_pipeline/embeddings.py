@@ -2,15 +2,15 @@
 
 from langchain.embeddings import HuggingFaceEmbeddings
 
-def get_embedder():
+def get_embeddings():
     """
     Initialise et retourne un moteur d'embedding HuggingFace.
     """
     print(" Initialisation du modèle d'embedding HuggingFace...")
     try:
-        embedder = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-        print(" Embedder prêt.")
-        return embedder
+        embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+        print(" Embeddings prêt.")
+        return embeddings
     except Exception as e:
         raise RuntimeError(f" Erreur lors de l'initialisation du modèle d'embedding : {e}")
 
@@ -31,10 +31,10 @@ def embed_docs(docs):
             raise ValueError(f" Document invalide (manque le champ 'context') : {doc}")
         texts.append(context)
 
-    embedder = get_embedder()
+    embeddings = get_embeddings()
 
     try:
-        vectors = embedder.embed_documents(texts)
+        vectors = embeddings.embed_documents(texts)
         print(f" {len(vectors)} embeddings générés.")
         return vectors
     except Exception as e:
