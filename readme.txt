@@ -8,8 +8,8 @@ Lancer un environnement virtuel :
 source path/to/rag-env/bin/activate
  
 Lancer le script bash d’installation LLM :
-./download.sh
-(au besoin faire : dos2unix download_LLM.sh puis chmod +x download.sh)
+./download.sh ou bash ./download.sh
+(au besoin faire : dos2unix download.sh puis chmod +x download.sh)
 
 Lancer l'image PostgreSQL : 
 docker run --name my-postgres \
