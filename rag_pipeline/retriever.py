@@ -3,7 +3,7 @@
 from langchain.embeddings import HuggingFaceEmbeddings
 import numpy as np
 
-VECTOR_DIM = 384  # Doit correspondre à celui défini dans db.py
+VECTOR_DIM = 384
 
 def embed_query(text):
     print("Embedding de la requête utilisateur...")
